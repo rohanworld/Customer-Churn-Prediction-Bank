@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Customer Churn Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Customer Churn Predictor</h1>
+    <form method="POST" action="/predict">
+        <label for="credit_score">Credit Score:</label>
+        <input type="number" name="credit_score" id="credit_score" required><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" required><br><br>
+
+        <label for="tenure">Tenure:</label>
+        <input type="number" name="tenure" id="tenure" required><br><br>
+
+        <label for="balance">Balance:</label>
+        <input type="number" name="balance" id="balance" required><br><br>
+
+        <label for="num_of_products">Number of Products:</label>
+        <input type="number" name="num_of_products" id="num_of_products" required><br><br>
+
+        <label for="has_credit_card">Has Credit Card:</label>
+        <select name="has_credit_card" id="has_credit_card" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br><br>
+
+        <label for="is_active_member">Is Active Member:</label>
+        <select name="is_active_member" id="is_active_member" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br><br>
+
+        <label for="estimated_salary">Estimated Salary:</label>
+        <input type="number" name="estimated_salary" id="estimated_salary" required><br><br>
+
+        <label for="is_female">Is Female:</label>
+        <select name="is_female" id="is_female" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br><br>
+
+        <label for="is_spain">Is from Spain:</label>
+        <select name="is_spain" id="is_spain" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br><br>
+
+        <label for="is_germany">Is from Germany:</label>
+        <select name="is_germany" id="is_germany" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    <center>
+        
+    {% if prediction %}
+    <h2>Prediction:</h2>
+    <p>{{ prediction }}</p>
+    {% endif %}
+    </center>
+</body>
+
+</html>
