@@ -2,7 +2,7 @@
 Churn Prediction Using Supervised Machine Learning  of Bank customers Data
 ## Screenshots
 
-![App Screenshot](https://github.com/rohanworld/Customer-Churn-Prediction-Bank/blob/master/demoImage.png)
+![App Screenshot](https://i.ibb.co/Gns7HCv/demo-Image.png)
 
 
 ## Run Locally
